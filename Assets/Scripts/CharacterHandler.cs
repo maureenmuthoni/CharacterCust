@@ -10,7 +10,7 @@ public class CharacterHandler : MonoBehaviour
     //bool to tell if the player is alive
     public bool alive;
     //connection to players character controller
-    public characterController controller;
+    public CharacterController controller;
     #endregion
     [Header("Health")]
     #region Health
@@ -24,7 +24,7 @@ public class CharacterHandler : MonoBehaviour
     //max and min experience 
     public int maxExp, curExp;
     #endregion
-    //[Header("Camera Connection")]
+    [Header("Camera Connection")]
     #region MiniMap
     //render texture for the mini map that we need to connect to a camera
     public RenderTexture miniMap;
@@ -100,20 +100,16 @@ public class CharacterHandler : MonoBehaviour
     {
         //set up our aspect ratio for the GUI elements
         //scrW - 16
-        float scrW = screen.Width /16;
+        float scrW = Screen.width /16;
         //scrH - 9
-        float scrH = screen.Width /9;
+        float scrH = Screen.height /9;
         //GUI Box on screen for the healthbar background
         GUI.Box(new Rect(6 * scrW, 0.25f * scrH, 4 * scrW, 0.5f * scrH), "");//background
-        //GUI Box for current health that moves in same place as the background bar
-       //current Health divided by the posistion on screen and timesed by the total max health                                                                                                                                                                                        
-        GUI.Box(new Rect(6 * scrW, 0.25f * scrH, curHealth * (4 * scrW) / maxHealth, 0.5f * scrH), "");//moving health bar
-                                                                                                       //GUI Box on screen for the experience background
-        GUI.Box(new Rect(6 * scrW, 0.75f * scrH, 4 * scrW, 0.25f * scrH), "");//background
-        //GUI Box for current experience that moves in same place as the background bar
-        //current experience divided by the posistion on screen and timesed by the total max experience
-        GUI.Box(new Rect(6*scrW))
+                                                                             //GUI Box for current health that moves in same place as the background bar
+                                                                             //current Health divided by the position on the screen times by the total max experience
+        GUI.Box(new Rect(6 * scrW, 0.75f * scrH, curExp * (4 * scrW) / maxExp, 0.25f * scrH), "");
         //GUI Draw Texture on the screen that has the mini map render texture attached
+        GUI.Box(new Rect(13 * scrW, 0.25f * scrH, 2.925f * scrW, 2.5f * scrH), miniMap);//minimap
     }
 
     #endregion
