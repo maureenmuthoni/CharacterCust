@@ -17,8 +17,10 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        mainCam = GameObject.FindGameObjectsWithTag("MainCamera").GetComponent<MouseLook>));
+        mainCam = Camera.main.GetComponent<MouseLook>();
     }
+
+
     #region OnGUI
     void OnGUI()
     {
@@ -39,7 +41,7 @@ public class Dialogue : MonoBehaviour
                 }
                 if (GUI.Button(new Rect(14 * scrW, 8.5f * scrH, scrW, 0.5f * scrH), "Decline"))
                 {
-                    index = text.Length-1;
+                    index = text.Length - 1;
                 }
             }
             else
@@ -56,6 +58,6 @@ public class Dialogue : MonoBehaviour
             }
         }
     }
-}
 
-#endregion
+    #endregion
+}

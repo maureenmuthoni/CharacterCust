@@ -3,7 +3,7 @@ using System.Collections;
 //this script can be found in the Component section under the option Character Set Up 
 //Interact
 [AddComponentMenu("Character Set Up/Interact")]
-public class PickUp : MonoBehaviour 
+public class PickUp : MonoBehaviour
 {
     #region Variables
     //We are setting up these variable and the tags in update for week 3,4 and 5
@@ -11,11 +11,11 @@ public class PickUp : MonoBehaviour
     //create two gameobject variables one called player and the other mainCam
     public GameObject Player;
     public GameObject mainCam;
-        #endregion
-	#region Start
+    #endregion
+    #region Start
     void Start()
     {
-       
+
         //connect our player to the player variable via tag
         Player = GameObject.FindGameObjectWithTag("Player");
         //connect our Camera to the mainCam variable via tag
@@ -36,7 +36,7 @@ public class PickUp : MonoBehaviour
             //create hit info
             RaycastHit hitinfo;
             //if this physics raycast hits something within 10 units
-            if(Physics.Raycast(Interact,out hitinfo, 10))
+            if (Physics.Raycast(Interact, out hitinfo, 10))
             {
                 #region NPC tag
                 //and that hits info is tagged NPC
@@ -48,32 +48,31 @@ public class PickUp : MonoBehaviour
                     if (dlg != null)
                     {
                         dlg.showDlg = true;
-                        Player.GetComponent
+
                     }
-                }
-                #endregion
-                #region Item
-                //and that hits info is tagged Item
-                if (hitinfo.collider.CompareTag("Item"))
-                {
+                    #endregion
+                    #region Item
+                    //and that hits info is tagged Item
+                    if (hitinfo.collider.CompareTag("Item"))
+                    {
 
-                    //Debug that we hit an Item
-                    Debug.Log("Hit an Item");
+                        //Debug that we hit an Item
+                        Debug.Log("Hit an Item");
+
+                    }
+                    #endregion
 
                 }
-                #endregion
 
             }
-
         }
+
+
+        #endregion
     }
 
-    
-    #endregion
+
+
+
+
 }
-
-
-
-
-
-
