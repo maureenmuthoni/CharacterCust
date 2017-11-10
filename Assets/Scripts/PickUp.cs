@@ -15,6 +15,7 @@ public class PickUp : MonoBehaviour
 	#region Start
     void Start()
     {
+       
         //connect our player to the player variable via tag
         Player = GameObject.FindGameObjectWithTag("Player");
         //connect our Camera to the mainCam variable via tag
@@ -31,7 +32,7 @@ public class PickUp : MonoBehaviour
             //create a ray
             Ray Interact;
             //this ray is shooting out from the main cameras screen point center of screen
-            Interact = Camera.main.screenPointToRay(new vector2(Sreen.width / 2, screen.height / 2));
+            Interact = Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
             //create hit info
             RaycastHit hitinfo;
             //if this physics raycast hits something within 10 units
@@ -39,10 +40,16 @@ public class PickUp : MonoBehaviour
             {
                 #region NPC tag
                 //and that hits info is tagged NPC
-                if (hitinfo.collider.compareTag("NPC"))
+                if (hitinfo.collider.CompareTag("NPC"))
                 {
                     //Debug that we hit a NPC
                     Debug.Log("Hitthe NPC");
+                    Dialogue dlg = hitinfo.transform.GetComponent<Dialogue>();
+                    if (dlg != null)
+                    {
+                        dlg.showDlg = true;
+                        Player.GetComponent
+                    }
                 }
                 #endregion
                 #region Item

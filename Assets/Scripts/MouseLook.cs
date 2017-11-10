@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+
 //this script can be found in the Component section under the option Character Set Up 
 //Mouse Look
 [AddComponentMenu("Character Set Up/Mouse Look")]
