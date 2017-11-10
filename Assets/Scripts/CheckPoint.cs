@@ -33,7 +33,7 @@ public class CheckPoint : MonoBehaviour
         #endregion
 
         #region Update
-            Void Update()
+            void Update()
             {
             //if our characters health is less than or equal to 0
             if (charH.curHealth == 0)
@@ -69,9 +69,5 @@ public class CheckPoint : MonoBehaviour
     #endregion
 
 
-
-
-
-
-
+    
 }
