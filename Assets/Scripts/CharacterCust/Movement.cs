@@ -45,7 +45,7 @@ public class Movement : MonoBehaviour
             moveDir *= speed;
             //we can also jump if we are grounded so
             //in the input button for jump is pressed then
-            if (Input.GetButton("jump"))
+            if (Input.GetButton("Jump"))
             {
                 //our moveDir.y is equal to our jump speed
                 moveDir.y = jumpSpeed;
